@@ -1,0 +1,74 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica.MainPage"
+             BackgroundColor="White"
+             Title="Recarga Telefónica">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <!-- Título -->
+            <Label Text="Recarga Telefónica"
+                   FontSize="28"
+                   TextColor="Purple"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Número de teléfono -->
+            <Label Text="Ingrese el número de teléfono:"
+                   FontSize="18"
+                   TextColor="Black" />
+            <Entry x:Name="JTex_Numero"
+                   Placeholder="Número telefónico"
+                   Keyboard="Numeric"
+                   FontSize="16"
+                   TextColor="Black"
+                   BackgroundColor="#EDEDED"
+                   HorizontalOptions="FillAndExpand" />
+
+            <!-- Operador telefónico -->
+            <Label Text="Seleccione el operador:"
+                   FontSize="18"
+                   TextColor="Black" />
+            <Picker x:Name="JCbo_Operador"
+                    FontSize="16"
+                    BackgroundColor="#EDEDED"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Movistar</x:String>
+                        <x:String>Claro</x:String>
+                        <x:String>CNT</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Monto de recarga -->
+            <Label Text="Seleccione el valor de la recarga:"
+                   FontSize="18"
+                   TextColor="Black" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <RadioButton x:Name="JRad_Monto3" Content="3" GroupName="Monto" FontSize="16" />
+                <RadioButton x:Name="JRad_Monto5" Content="5" GroupName="Monto" FontSize="16" Margin="20,0,20,0" />
+                <RadioButton x:Name="JRad_Monto10" Content="10" GroupName="Monto" FontSize="16" />
+            </StackLayout>
+
+            <!-- Resumen de recarga -->
+            <Label x:Name="JLbl_Resumen"
+                   Text="Seleccione una recarga para ver el resumen."
+                   FontSize="16"
+                   TextColor="Gray"
+                   HorizontalOptions="Center" />
+
+            <!-- Botón para recargar -->
+            <Button x:Name="JBtn_Recargar"
+                    Text="Recargar"
+                    FontSize="18"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="JBtn_Recargar_Click" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
