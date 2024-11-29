@@ -25,6 +25,13 @@ namespace Practica
                 return;
             }
 
+            // Validar longitud del número
+            if (JTex_Numero.Text.Length != 10 || !long.TryParse(JTex_Numero.Text, out _))
+            {
+                await DisplayAlert("Error", "El número de celular debe tener exactamente 10 dígitos.", "OK");
+                return;
+            }
+
             // Obtener datos seleccionados
             string numero = JTex_Numero.Text;
             string operador = JCbo_Operador.SelectedItem.ToString();
